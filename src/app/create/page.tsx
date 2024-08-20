@@ -38,7 +38,7 @@ const handleSubmit = async (e: any) => {
       }
 
         setIsLoading(false)
-        router.push('/')
+        router.push('/posts')
     }
 
     return (
