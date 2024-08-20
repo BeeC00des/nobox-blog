@@ -1,7 +1,7 @@
 import { Space } from "nobox-client";
 import { createRowSchema } from "../config";
 
-interface Post {
+export interface Post {
     title: string;
     content: string;
 }
