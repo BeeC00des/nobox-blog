@@ -28,8 +28,7 @@ export default function Item() {
     const handleDelete = async (id: any) => {
         // use nobox delete call here and pass in the right data
         // await PostModel.delete(id);
-
-        router.refresh()
+        router.push('/')
     }
 
 
