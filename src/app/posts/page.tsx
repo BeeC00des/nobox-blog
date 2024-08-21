@@ -15,13 +15,15 @@ export default function Page() {
     const id = query.get('id')
     console.log(id);
 
-
+/* eslint-disable no-console */
     useEffect(() => {
         PostModel.find().then((postsFromNobox: (ReturnObject<Post>)[]) => {
             setLoading(false);
             setPosts(postsFromNobox)
         })
-    }, [])
+    }, []); //eslint-disable-line react-hooks/exhaustive-deps
+/* eslint-disable no-console */
+
 
 
     const handleDelete = async (id: any) => {
