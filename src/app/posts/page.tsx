@@ -10,10 +10,10 @@ export default function Page() {
     const [posts, setPosts] = useState<(ReturnObject<Post>)[]>([]);
     const router = useRouter()
 
-    const query = useSearchParams();
+    // const query = useSearchParams();
 
-    const id = query.get('id')
-    console.log(id);
+    // const id = query.get('id')
+    // console.log(id);
 
 
     useEffect(() => {
