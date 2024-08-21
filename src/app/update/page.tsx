@@ -7,11 +7,15 @@ import { PostModel } from '../../../nobox-baas/record-structure/post';
 const Page = () => {
     // define parameters
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    // const [isMounted, setIsMounted] = useState<boolean>(false);
+
+
     const router = useRouter()
 
     const query = useSearchParams();
 
-    const id = query.get('id')
+    // const id = isMounted ? query.get('id') : null;
+    const id = query.get('id');
 
     const [blogData, setBlogData] = useState({
         title: '',
@@ -21,6 +25,8 @@ const Page = () => {
     console.log({ id })
 
     useEffect(() => {
+        // setIsMounted(true);
+
         if (!id) {
             alert("Page error, Go back and try again.")
         }
@@ -35,10 +41,11 @@ const Page = () => {
     }, [])
 
 
+
     //define input function
     const handleInputChange = async (e: any) => {
         const { name, value } = e.target;
-        console.log({ name, value, id })
+        // console.log({ name, value, id })
 
         if (id) {
             setBlogData({
@@ -57,6 +64,10 @@ const Page = () => {
         router.push('/posts')
         
     };
+
+    // if (!isMounted) {
+    //     return null; // Return null during prerendering
+    // }
 
 
     return (
